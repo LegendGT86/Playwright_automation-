@@ -1,0 +1,10 @@
+username,password,error
+standard_user,secret_sauce,FALSE
+locked_out_user,secret_sauce,TRUE
+problem_user,secret_sauce,FALSE
+performance_glitch_user,secret_sauce,FALSE
+error_user,secret_sauce,FALSE
+visual_user,secret_sauce,FALSE
+hacker,secret_sauce,TRUE
+dangerous_individual,secret_sauce,TRUE
+standard_user,known_sauce,TRUE

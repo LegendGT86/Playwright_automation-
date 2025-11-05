@@ -1,0 +1,19 @@
+{
+  "name": "qa-automation-xekrdv",
+  "version": "1.0.0",
+  "description": "Your assignment is to write automated test cases for an online shop to test the core functionality of the site.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "http://impact-rgmabl@git.codesubmit.io/impact/qa-automation-xekrdv"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.3.0"
+  }
+}
