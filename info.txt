@@ -1,0 +1,76 @@
+//To generate our auth.json file
+npx playwright codegen https://crm.bonline-testing.xyz --save-storage=fixtures/auth.json
+
+// To debug how TypeScript is resolving the file.
+npx tsc --traceResolution
+
+//If CI/CD pipeline setup but you want to skip on initial commitpush, just flag it:
+git commit -m "Initial commit [skip ci]" 
+
+✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅Command	Description✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+npm run test	Run all tests (default ENV = testing)
+npm run test:ui	Run tests tagged @ui
+npm run test:api	Run tests tagged @api
+npm run test:testing	Run all tests in testing environment
+npm run test:production	Run all tests in production environment
+npm run test:debug:testing	Run headed debug mode in testing environment
+npm run allure:generate	Generate Allure report
+npm run allure:open	Open Allure report in browser
+
+
+✅✅✅✅✅✅✅✅✅✅✅//Setting up your repo✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+1) create a repo on Github via the website
+2) Open VS Code and initialize your local repo {File → Open Folder → select your project folder}
+3) Open terminal in VS code {Ctrl + `}
+4) Add all files {git add .}
+5) Commit your first version {git commit -m "Initial commit"}
+6) Connect to github remote {git remote add origin https://github.com/yourusername/my-project.git} 
+7) Create main branch {git branch -M main}  --> capital 'M' forces name change, lowercase would try to rename but fail if branch alterady exists
+8) Push to main {git push -u origin main}
+
+9) If you want to create a branch, you can use checkout or rather the newer switch (git switch -c feature/loginPage) 
+    which creates new branch and switches to it immediately
+10) Then after commit, push to branch {git push -u origin features/loginPage} -u sets the upstream so next time you can just do git push
+
+✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅//Install Allure:✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+1) npm install --save-dev allure-playwright allure-commandline
+2) Setup in your playwright.config.ts file
+     // ✅ Allure + HTML reporters
+    reporter: [
+        ['list'],
+        ['html', { open: 'never', outputFolder: 'test-results/html-report' }],
+        ['allure-playwright']
+    ],
+3) update your package.json under scripts
+    "scripts": {
+  "test": "npx playwright test",
+  "test:headed": "npx playwright test --headed",
+  "test:debug": "npx playwright test --headed --trace on",
+  "test:ui": "npx playwright test --grep @ui",
+  "test:api": "npx playwright test --grep @api",
+  "allure:generate": "allure generate ./allure-results --clean -o ./test-results/allure-report",
+  "allure:open": "allure open ./test-results/allure-report"
+}
+
+To run allure:
+| Command                   | Description                            |
+| ------------------------- | -------------------------------------- |
+| `npm test`                | Run all Playwright tests (UI + API)    |
+| `npm run test:api`        | Run only API-tagged tests              |
+| `npm run test:headed`     | Run tests in headed mode               |
+| `npm run allure:generate` | Generate Allure report                 |
+| `npm run allure:open`     | Open the Allure report in your browser |
+
+
+✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅//Common git commands:✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+Check branch {git branch}
+Verify remote connection {git remote -v}
+future commits {git add --> git commit --> git push}
+** Or combine them with git add . && git commit -m "message"
+Then it push -u origin feature/login for example
+** For git hygiene, if you are done merging the branch and start a new branch, delete the old one to prevent clutter:
+git checkout main
+git pull origin main (pulls the latest main after the branch was merged)
+git branch -d feature/login
+git push origin --delete feature/login (deletes the branch on github)
+git checkout -b features/homepage (then you can start a new branch to work on)
