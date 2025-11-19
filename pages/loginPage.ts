@@ -1,4 +1,5 @@
 import { expect, Page } from "@playwright/test";
+
 import { ENV } from "../utils/env";
 
 export class LoginPage {
@@ -6,7 +7,7 @@ readonly usernameInput;
 readonly passwordInput;
 readonly successURL;
 readonly loginButton;
-readonly errorMessage;
+readonly errorMessage; 
 
 constructor(public page: Page) {
     this.usernameInput = page.locator('input[name = "user-name"]');
@@ -19,6 +20,25 @@ constructor(public page: Page) {
 async navigateTo() {
     await this.page.goto(ENV.baseUrl);
     await expect (this.page).toHaveURL(ENV.baseUrl);
+
+export class LoginPage {
+usernameInput: any;
+passwordInput: any;
+successURL: any;
+
+constructor(private page: Page) {
+    this.page = page;
+    this.usernameInput = page.locator('input[name="user-name"]');
+    this.passwordInput = page.locator('input[name="password"]');
+    this.successURL = "/inventory.html";
+}
+public getPage(): Page {
+    return this.page;
+}
+
+async goto() {
+    await this.page.goto('https://www.saucedemo.com/', {waitUntil: 'networkidle'});
+
 }
 
 async login(username: string, password: string) {
