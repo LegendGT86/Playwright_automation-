@@ -1,19 +1,33 @@
 {
-  "name": "qa-automation-xekrdv",
+  "name": "automationqa",
   "version": "1.0.0",
-  "description": "Your assignment is to write automated test cases for an online shop to test the core functionality of the site.",
+  "description": "Playwright automation project for saucedemo.com",
   "main": "index.js",
-  "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "http://impact-rgmabl@git.codesubmit.io/impact/qa-automation-xekrdv"
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --headed --trace on --slow-mo 100",
+    "test:ui": "npx playwright test --grep @ui",
+    "test:api": "npx playwright test --grep @api",
+    "test:functionality": "npx playwright test --grep @functionality",
+    "test:testing": "cross-env ENV=testing npx playwright test",
+    "test:production": "cross-env ENV=production npx playwright test",
+    "test:debug:testing": "cross-env ENV=testing npx playwright test --headed --trace on --slow-mo 100",
+    "test:debug:production": "cross-env ENV=production npx playwright test --headed --trace on --slow-mo 100",
+    "allure:generate": "npx allure generate ./allure-results --clean -o ./test-results/allure-report",
+    "allure:open": "npx allure open ./test-results/allure-report",
+    "allure:clean": "rimraf ./allure-results ./test-results/allure-report"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
-    "@playwright/test": "^1.55.0",
-    "@types/node": "^24.3.0"
+    "@playwright/test": "^1.45.0",
+    "allure-commandline": "^2.34.1",
+    "allure-playwright": "^3.4.2",
+    "cross-env": "^10.1.0",
+    "rimraf": "^5.0.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
   }
 }

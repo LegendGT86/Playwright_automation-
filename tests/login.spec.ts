@@ -1,21 +1,20 @@
 import {test, expect} from '@playwright/test';
-import { LoginPage } from '../pages/loginPage';
-import { ENV } from '../utils/env';
-import { loadTestData } from "../utils/dataloader";
+import { LoginPage } from '../../pages/loginPage';
+import { ENV } from '../../utils/env';
+import { loadTestData } from "../../utils/dataloader";
 
 const users = loadTestData <{username: string; password: string}>("data/Users.csv")
 
 test.describe('login tests for all users', () => {
 
-    test('Successful login with valid user from .csv data source', async ({ page }) => {
+    test('@ui login with valid and invalid user from .csv data source', async ({ page }) => {
+
         for (const user of users) {
             const loginPage = new LoginPage(page);
-            await loginPage.goto();
-            await loginPage.login(user.username,user.password);
             await loginPage.verifyLogin();
 
             await test.step("Login navigation", async() => {
-                await loginPage.goto();
+                await loginPage.navigateTo();
             });
 
             await test.step(`Attempted login with user ${user.username}`, async() =>{
@@ -28,7 +27,7 @@ test.describe('login tests for all users', () => {
                     console.log(`${user.username} logged in successfully`)
                 } catch {
                     const errMsg = await loginPage.getError();
-                    console.log(`${user.username} failed to login successfully`);
+                    console.log(`${user.username} failed to login successfully with error: ${errMsg}`);
                 }
             });
         }

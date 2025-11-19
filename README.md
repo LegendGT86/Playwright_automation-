@@ -1,20 +1,16 @@
 ### Objective
 
-Your assignment is to write automated test cases for an online shop to test the core functionality of the site.
-
-### Brief
-
-The product team at Impact has come up with a [simple MVP for an online shop](https://qa-challenge.codesubmit.io). Help the team get confidence in further development by automatically testing the most critical features of the app by doing the following:
+Automated test cases for an online shop to test the core functionality of the site.
 
 ### Tasks
 
--   Compile a list of several testable user flows, cases, or scenarios. This doesn't have to cover every possible real-life case; please focus on what you think is most fundamental (e.g., sign in).
+-   Compile a list of testable user flows, cases, or scenarios.
 
 | Site        | URL                                |
 | ----------- | ---------------------------------- |
-| Online Shop | https://qa-challenge.codesubmit.io |
+| Online Shop | https://www.saucedemo.com/|
 
-Make sure to test scenarios for all provided user accounts.
+User scenarios
 
 | User                    | Description                                                             |
 | ----------------------- | ----------------------------------------------------------------------- |
@@ -23,21 +19,11 @@ Make sure to test scenarios for all provided user accounts.
 | problem_user            | Images are not loading for this user.                                   |
 | performance_glitch_user | This user has high loading times. Does the site still work as expected? |
 
--   Implement automated browser tests for all flows. Use any testing technology you'd like – Cypress, Selenium, or any other you think would work well
-
-### Evaluation Criteria
+### Criteria
 
 -   **Automation & QA** best practices
--   Show us your work through your commit history
--   We're looking for you to produce working code, with enough room to demonstrate how to structure components in a small program
--   Completeness: did you complete the features?
--   Correctness: does the functionality act in sensible, thought-out ways?
--   Maintainability: is it written in a clean, maintainable way?
-
-### CodeSubmit
-
-Please organize, design, test and document your code as if it were going into production - then push your changes to the master branch. After you have pushed your code, you may submit the assignment on the assignment page.
-
-**Have fun building!** 🚀
-
-The Impact Team
+-   Show work through your commit history
+-   Produce working code, with enough room to demonstrate how to structure components in a small program
+-   Completeness: complete the features?
+-   Correctness: The functionality act in sensible, thought-out way
+-   Maintainability: clean & maintainable written code
