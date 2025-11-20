@@ -1,7 +1,6 @@
 import {test, expect} from '@playwright/test';
-import { LoginPage } from '../../pages/loginPage';
-import { ENV } from '../../utils/env';
-import { loadTestData } from "../../utils/dataloader";
+import { LoginPage } from 'pages/loginPage';
+import { loadTestData } from 'utils/dataloader';
 
 const users = loadTestData <{username: string; password: string}>("data/Users.csv")
 
