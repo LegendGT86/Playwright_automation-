@@ -6,12 +6,12 @@ export class CartPage extends BasePage {
     super(page);
   }
 
-    get CartIcon(){
+    get cartIcon(){
     return this.page.locator('.shopping_cart_badge');
     }
 
     async getCartCount(): Promise<number>{
-        const text = await this.CartIcon.textContent(); // this grabs the inner text of the element
+        const text = await this.cartIcon.textContent(); // this grabs the inner text of the element
         const cleaned = text?.trim() ?? "";
         return cleaned ? parseInt(cleaned) : 0; //similar to if statement: If (text), return parseInt(text) else return 0
     }
@@ -29,7 +29,15 @@ export class CartPage extends BasePage {
     return this.page.locator('button[data-test = "continue-shopping"]');
   }
 
+  get checkoutButton() {
+    return this.page.locator('#checkout');
+  }
+
   async proceedToCheckout() {
-    await this.page.locator('#checkout').click();
+    await this.checkoutButton.click();
+  }
+
+  async assertOnCartPage(){
+    await expect (this.continueShopping).toBeVisible({ timeout: 5000 });
   }
 }
