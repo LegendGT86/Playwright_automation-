@@ -1,3 +1,7 @@
+
+//First step with playwright to create basic folder structure:
+npm init playwright@latest
+
 //To generate our auth.json file
 npx playwright codegen https://crm.bonline-testing.xyz --save-storage=fixtures/auth.json
 

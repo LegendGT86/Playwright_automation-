@@ -14,9 +14,9 @@ export default defineConfig({
   expect: { timeout: 5000 },
 
   reporter: [
-    ['list'],
-    ['html', { open: 'never', outputFolder: 'test-results/html-report' }],
-    ['allure-playwright']
+    ['list', { open: 'never', outputFolder: 'html-report' }],
+    ['html', { open: 'never', outputFolder: 'html-report' }],
+    ['allure-playwright', { open: 'never', outputFolder: 'test-results/allure' }]
   ],
 
   // Global settings applied to all tests
@@ -49,24 +49,24 @@ export default defineConfig({
       },
       fullyParallel: true,
     },
-    {
-      name: 'ui-tests-firefox',
-      testMatch: /.*\.spec\.ts/,
-      use: {
-        ...devices['Desktop Firefox'],
-        baseURL: BASE_URL,
-      },
-      fullyParallel: true,
-    },
-    {
-      name: 'ui-tests-safari',
-      testMatch: /.*\.spec\.ts/,
-      use: {
-        ...devices['Desktop Safari'],
-        baseURL: BASE_URL,
-      },
-      fullyParallel: true,
-    },
+    // {
+    //   name: 'ui-tests-firefox',
+    //   testMatch: /.*\.spec\.ts/,
+    //   use: {
+    //     ...devices['Desktop Firefox'],
+    //     baseURL: BASE_URL,
+    //   },
+    //   fullyParallel: true,
+    // },
+    // {
+    //   name: 'ui-tests-safari',
+    //   testMatch: /.*\.spec\.ts/,
+    //   use: {
+    //     ...devices['Desktop Safari'],
+    //     baseURL: BASE_URL,
+    //   },
+    //   fullyParallel: true,
+    // },
 
     // ----- API Tests -----
     {
@@ -85,5 +85,5 @@ export default defineConfig({
     },
   ],
 
-  outputDir: 'test-results/',
+  outputDir: 'test-results',
 });

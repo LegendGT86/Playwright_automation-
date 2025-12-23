@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","14559","@ui login with valid and invalid user from .csv data source","ui-tests-safari","Tue Dec 09 10:48:34 SAST 2025","failed","Tue Dec 09 10:48:49 SAST 2025","login tests for all users","login.spec.ts","",""
+"","1853","login with valid and invalid user from .csv data source","ui-tests-chromium","Wed Dec 10 09:32:40 SAST 2025","passed","Wed Dec 10 09:32:42 SAST 2025","login tests for all users","login.spec.ts","",""
+"","16106","@ui login with valid and invalid user from .csv data source","ui-tests-chromium","Tue Dec 09 10:48:34 SAST 2025","failed","Tue Dec 09 10:48:50 SAST 2025","login tests for all users","login.spec.ts","",""
+"","20665","@ui login with valid and invalid user from .csv data source","ui-tests-firefox","Tue Dec 09 10:48:34 SAST 2025","failed","Tue Dec 09 10:48:54 SAST 2025","login tests for all users","login.spec.ts","",""
+"","30465","login with valid and invalid user from .csv data source","ui-tests-safari","Wed Dec 10 09:26:24 SAST 2025","broken","Wed Dec 10 09:26:54 SAST 2025","login tests for all users","login.spec.ts","",""
+"","30455","login with valid and invalid user from .csv data source","ui-tests-firefox","Wed Dec 10 09:26:24 SAST 2025","broken","Wed Dec 10 09:26:54 SAST 2025","login tests for all users","login.spec.ts","",""

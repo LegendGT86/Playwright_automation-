@@ -13,7 +13,7 @@ constructor(public page: Page) {
     this.usernameInput = page.locator('input[name = "user-name"]');
     this.passwordInput = page.locator('input[name = "password"]');
     this.successURL = "/inventory.html";
-    this.loginButton = page.locator('button[name ="login"]');
+    this.loginButton = page.locator('input[name="login-button"]');
     this.errorMessage = page.locator('[data-test = "error"]');
 }
 

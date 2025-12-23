@@ -6,13 +6,15 @@ const users = loadTestData <{username: string; password: string}>("data/Users.cs
 
 test.describe('login tests for all users', () => {
 
-    test('@ui login with valid and invalid user from .csv data source', async ({ page }) => {
+    test('login with valid and invalid user from .csv data source', async ({ page }, testInfo) => {
+            testInfo.annotations.push({ type: 'feature', description: 'Login' });
+            testInfo.annotations.push({ type: 'severity', description: 'critical' });
 
         for (const user of users) {
             const loginPage = new LoginPage(page);
-            await loginPage.verifyLogin();
 
             await test.step("Login navigation", async() => {
+
                 await loginPage.navigateTo();
             });
 
